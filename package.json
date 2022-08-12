@@ -19,7 +19,6 @@
     "mysql2": "^2.3.3",
     "sequelize": "^6.21.3"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/troymnelson/techBlog.git"
