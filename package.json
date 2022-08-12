@@ -1,7 +1,6 @@
 {
   "name": "techblog",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,5 +18,15 @@
     "express-session": "^1.17.3",
     "mysql2": "^2.3.3",
     "sequelize": "^6.21.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/troymnelson/techBlog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/troymnelson/techBlog/issues"
+  },
+  "homepage": "https://github.com/troymnelson/techBlog#readme",
+  "description": ""
 }

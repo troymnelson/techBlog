@@ -10,8 +10,8 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 
 const view_routes = require('./routes/view_routes');
-const post_routes = require('./post_routes');
-const auth_routes = require('./auth_routes');
+const post_routes = require('./routes/post_routes');
+const auth_routes = require('./routes/auth_routes');
 
 app.engine('hbs', engine({ extname: '.hbs' }));
 app.set('view engine', 'hbs');
@@ -32,9 +32,9 @@ app.use(session({
 
     resave: false,
 
-    cookie: {
-        // httpOnly: true
-    }
+    // cookie: {
+    //     // httpOnly: true
+    // }
 
 }))
 

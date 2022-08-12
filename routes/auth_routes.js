@@ -37,13 +37,11 @@ router.post('/logged', (req, res) => {
 
         const validPass = await user.validatePassword(req.body.password, user.password )
 
-        if (!pass_valid) {
+        if (!validPass) {
             return res.redirect('/login')
         }
 
         req.session.save(() => {
-            TimeRanges.start();
-            console.log(timer.isStarted());
             req.session.user_id = user.id;
             res.redirect('/dashboard')
         })
@@ -54,10 +52,7 @@ router.get('/logout', (req, res) => {
 
     if (!req.session.user_id) return res.redirect('/');
 
-    req.session.destroy(() => {
-        const time = timer.time();
-        res.redirect('/', time);
-    })
+    
 })
 
 module.exports = router;
