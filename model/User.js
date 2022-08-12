@@ -2,12 +2,17 @@ const { Model, DataTypes } = require("sequelize");
 const bcrypt = require('bcrypt');
 
 const sequelize = require('./conn');
-const Post = require("./Post");
+
 
 class User extends Model { }
 
 User.init(
     {
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
         username: {
             type: DataTypes.STRING,
             allowNull: false
@@ -42,7 +47,5 @@ User.prototype.validatePassword = async function (password, stored_password) {
     return await bcrypt.compare(password, stored_password);
 }
 
-User.hasMany(Post);
-Post.belongsTo(User);
 
 module.exports = User;

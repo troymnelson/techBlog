@@ -12,6 +12,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const view_routes = require('./routes/view_routes');
 const post_routes = require('./routes/post_routes');
 const auth_routes = require('./routes/auth_routes');
+const comment_routes = require('./routes/comment_routes');
 
 app.engine('hbs', engine({ extname: '.hbs' }));
 app.set('view engine', 'hbs');
@@ -32,16 +33,13 @@ app.use(session({
 
     resave: false,
 
-    // cookie: {
-    //     // httpOnly: true
-    // }
 
 }))
 
 app.use('/', view_routes);
 app.use('/auth', auth_routes);
 app.use('/post', post_routes);
-
+// app.use('/comment', comment_routes);
 
 connection.sync({ force: false })
     .then(() => {

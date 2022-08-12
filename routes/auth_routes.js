@@ -19,7 +19,7 @@ router.post('/registration', (req, res) => {
         }).then(user => {
             req.session.save(() => {
                 req.session.user_id = user.user_id
-                res.redirect('/')
+                res.redirect('/dashboard')
             })
         })
     })
@@ -28,7 +28,7 @@ router.post('/registration', (req, res) => {
 router.post('/logged', (req, res) => {
     User.findOne({
         where: {
-            email: req.body.email
+            username: req.body.username
         }
     }).then(async user => {
         if (!user) {

@@ -42,7 +42,7 @@ router.get('/dashboard', async (req, res) => {
             message: post.message
         }
     })
-    res.render('dashboard', {posts, title: 'Dashboard', isHome: false, friday: result});
+    res.render('dashboard', {posts, title: 'dashboard', isHome: false});
 });
 
 module.exports = router;
