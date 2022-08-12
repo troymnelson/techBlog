@@ -1,11 +1,3 @@
 DROP DATABASE IF EXISTS myDatabase;
 
 CREATE DATABASE myDatabase;
-
-USE myDatabase;
-
-CREATE TABLE user (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user VARCHAR(30) NOT NULL,
-    pass VARCHAR(50) NOT NULL,
-)
