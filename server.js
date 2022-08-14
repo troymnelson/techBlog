@@ -39,7 +39,7 @@ app.use(session({
 app.use('/', view_routes);
 app.use('/auth', auth_routes);
 app.use('/post', post_routes);
-// app.use('/comment', comment_routes);
+app.use('/comment', comment_routes);
 
 connection.sync({ force: false })
     .then(() => {

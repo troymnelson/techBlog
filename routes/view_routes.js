@@ -32,7 +32,7 @@ router.get('/login', (req, res) => {
 
 router.get('/dashboard', async (req, res) => {
     console.log(req.session);
-    let user = await User.findByPk(req.session.user_id, {include: Post});
+    // let user = await User.findByPk(req.session.user_id, {include: Post});
     let posts = await Post.findAll();
 
     posts = posts.map(post => {
