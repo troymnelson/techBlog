@@ -14,20 +14,20 @@ router.get('/', (req, res) => {
                     email: user.email,
 
                 }
-                res.render('index', { user, isHome: true })
+                res.render('index', { user })
             }
         );
     }
-    res.render('index', {title: 'Chat App', isHome: true})
+    res.render('index', {title: 'Chat App' })
 });
 
 router.get('/register', (req, res) => {
-    res.render('register', {title: 'register', isHome: false });
+    res.render('register', {title: 'register' });
 
 });
 
 router.get('/login', (req, res) => {
-    res.render('login', { title: 'login', isHome: false});
+    res.render('login', { title: 'login' });
 });
 
 router.get('/dashboard', async (req, res) => {
@@ -37,12 +37,12 @@ router.get('/dashboard', async (req, res) => {
 
     posts = posts.map(post => {
         return {
-            id: post.id,
+            post_id: post.id,
             title: post.title,
             message: post.message
         }
     })
-    res.render('dashboard', {posts, title: 'dashboard', isHome: false});
+    res.render('dashboard', {posts, title: 'dashboard' });
 });
 
 module.exports = router;

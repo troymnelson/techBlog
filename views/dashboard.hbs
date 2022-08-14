@@ -1,4 +1,17 @@
 <main>
     <h1>dashboard</h1>
-    <form action="/post/" method="post"></form>
+    <form action="/post/" method="post">
+        <input type="text" name="title" placeholder="post title">
+        <input type="text" name="message" placeholder="message">
+        <button>post!</button>
+    </form>
+    <div>
+        {{#each posts}}
+        <div>
+            <div>
+                <h5>{{this.title}}</h5>
+            </div>
+        </div>
+        {{/each}}
+    </div>
 </main>
